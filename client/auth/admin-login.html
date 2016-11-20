@@ -1,0 +1,36 @@
+<head>
+  <title>AdminSite-Login</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/_all-skins.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/js/dashboard2.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.slimscroll.min.js"></script>
+  <script src="/js/jquery.sparkline.min.js"></script>
+
+</head>
+<template name='AdminLogin'>
+  <div class="login-box" style="background:#3c8dbc;">
+    <div class="login-box-body" style="background: #ebf1f5;">
+      <p class="login-box-msg">Sign in to start your session</p>
+      <form id="adminLoginForm" method="post">
+        <div class="form-group has-feedback">
+          <input type="email" id="email" class="form-control" placeholder="Email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

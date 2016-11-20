@@ -1,0 +1,34 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'alanning:roles' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose install initial load of D:\projects\Upwork\meteorUS\fresh\landing_page\package.json
+5 verbose installManyTop reading scoped package data from D:\projects\Upwork\meteorUS\fresh\landing_page\node_modules\babel-runtime\package.json
+6 verbose installManyTop reading scoped package data from D:\projects\Upwork\meteorUS\fresh\landing_page\node_modules\core-js\package.json
+7 verbose installManyTop reading scoped package data from D:\projects\Upwork\meteorUS\fresh\landing_page\node_modules\meteor-node-stubs\package.json
+8 verbose installManyTop reading scoped package data from D:\projects\Upwork\meteorUS\fresh\landing_page\node_modules\regenerator-runtime\package.json
+9 verbose readDependencies loading dependencies from D:\projects\Upwork\meteorUS\fresh\landing_page\package.json
+10 verbose stack Error: Unsupported URL Type: alanning:roles
+10 verbose stack     at parseUrl (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:169:13)
+10 verbose stack     at npa (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:75:12)
+10 verbose stack     at resolver (C:\Program Files\nodejs\node_modules\npm\lib\install.js:845:42)
+10 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+10 verbose stack     at Array.forEach (native)
+10 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+10 verbose stack     at Array.forEach (native)
+10 verbose stack     at asyncMap (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+10 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:703:5
+10 verbose stack     at ReadFileContext.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\install.js:368:22)
+11 verbose cwd D:\projects\Upwork\meteorUS\fresh\landing_page
+12 error Windows_NT 6.3.9600
+13 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save" "alanning:roles"
+14 error node v4.4.5
+15 error npm  v2.15.5
+16 error Unsupported URL Type: alanning:roles
+17 error If you need help, you may report this error at:
+17 error     <https://github.com/npm/npm/issues>
+18 verbose exit [ 1, true ]

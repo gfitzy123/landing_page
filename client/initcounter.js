@@ -1,8 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 // import './main.html';
-
-
 (function($) {
     $.fn.countTo = function(options) {
         // merge the default plugin settings with the custom options
@@ -49,42 +47,3 @@ import { ReactiveVar } from 'meteor/reactive-var';
         onComplete: null,  // callback method for when the element finishes updating
     };
 })(jQuery);
-
-jQuery(function($) {
-         $('.timer3').countTo({
-            from: 1,
-            to: 1000,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-        });
-    });
-
-jQuery(function($) {
-        $('.timer2').countTo({
-            from: 1,
-            to: 32,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-
-        });
-    });
-
-
-jQuery(function($) {
-        $('.timer1').countTo({
-            from: 1,
-            to: 67,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-
-        });
-    });
