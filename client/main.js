@@ -1,90 +1,103 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 // import './main.html';
+/*!
+* jquery.counterup.js 1.0
+*
+* Copyright 2013, Benjamin Intal http://gambit.ph @bfintal
+* Released under the GPL v2 License
+*
+* Date: Nov 26, 2013
+*/
+/*
+    countUp.js
+    by @inorganik
+*/
+
+// target = id of html element or var of previously selected html element where counting occurs
+// startVal = the value you want to begin at
+// endVal = the value you want to arrive at
+// decimals = number of decimal places, default 0
+// duration = duration of animation in seconds, default 2
+// options = optional object of options (see below)
 
 
-(function($) {
-    $.fn.countTo = function(options) {
-        // merge the default plugin settings with the custom options
-        options = $.extend({}, $.fn.countTo.defaults, options || {});
 
-        // how many times to update the value, and how much to increment the value on each update
-        var loops = Math.ceil(options.speed / options.refreshInterval),
-            increment = (options.to - options.from) / loops;
+(function( $ ){
+  "use strict";
 
-        return $(this).each(function() {
-            var _this = this,
-                loopCount = 0,
-                value = options.from,
-                interval = setInterval(updateTimer, options.refreshInterval);
+  $.fn.counterUp = function( options ) {
 
-            function updateTimer() {
-                value += increment;
-                loopCount++;
-                $(_this).html(value.toFixed(options.decimals));
+    // Defaults
+    var settings = $.extend({
+        'time': 400,
+        'delay': 10
+    }, options);
 
-                if (typeof(options.onUpdate) == 'function') {
-                    options.onUpdate.call(_this, value);
+    return this.each(function(){
+
+        // Store the object
+        var $this = $(this);
+        var $settings = settings;
+
+        var counterUpper = function() {
+            var nums = [];
+            var divisions = $settings.time / $settings.delay;
+            var num = $this.text();
+            var isComma = /[0-9]+,[0-9]+/.test(num);
+            num = num.replace(/,/g, '');
+            var isInt = /^[0-9]+$/.test(num);
+            var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
+            var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
+
+            // Generate list of incremental numbers to display
+            for (var i = divisions; i >= 1; i--) {
+
+                // Preserve as int if input was int
+                var newNum = parseInt(num / divisions * i);
+
+                // Preserve float if input was float
+                if (isFloat) {
+                    newNum = parseFloat(num / divisions * i).toFixed(decimalPlaces);
                 }
 
-                if (loopCount >= loops) {
-                    clearInterval(interval);
-                    value = options.to;
-
-                    if (typeof(options.onComplete) == 'function') {
-                        options.onComplete.call(_this, value);
+                // Preserve commas if input had commas
+                if (isComma) {
+                    while (/(\d+)(\d{3})/.test(newNum.toString())) {
+                        newNum = newNum.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
                     }
                 }
-            }
-        });
-    };
 
-    $.fn.countTo.defaults = {
-        from: 0,  // the number the element should start at
-        to: 100,  // the number the element should end at
-        speed: 1000,  // how long it should take to count between the target numbers
-        refreshInterval: 100,  // how often the element should be updated
-        decimals: 0,  // the number of decimal places to show
-        onUpdate: null,  // callback method for every time the element is updated,
-        onComplete: null,  // callback method for when the element finishes updating
-    };
-})(jQuery);
-
-jQuery(function($) {
-         $('.timer3').countTo({
-            from: 1,
-            to: 1000,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
+                nums.unshift(newNum);
             }
-        });
+
+            $this.data('counterup-nums', nums);
+            $this.text('0');
+
+            // Updates the number until we're done
+            var f = function() {
+                $this.text($this.data('counterup-nums').shift());
+                if ($this.data('counterup-nums').length) {
+                    setTimeout($this.data('counterup-func'), $settings.delay);
+                } else {
+                    delete $this.data('counterup-nums');
+                    $this.data('counterup-nums', null);
+                    $this.data('counterup-func', null);
+                }
+            };
+            $this.data('counterup-func', f);
+
+            // Start the count up
+            setTimeout($this.data('counterup-func'), $settings.delay);
+        };
+
+        // Perform counts when the element gets into view
+        $this.waypoint(counterUpper, { offset: '100%', triggerOnce: true });
     });
 
-jQuery(function($) {
-        $('.timer2').countTo({
-            from: 1,
-            to: 32,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
-            }
+  };
 
-        });
-    });
+})( jQuery );
 
+$('div.counter').counterUp();
 
-jQuery(function($) {
-        $('.timer1').countTo({
-            from: 1,
-            to: 67,
-            speed: 5000,
-            refreshInterval: 50,
-            onComplete: function(value) {
-                console.debug(this);
-            }
-
-        });
-    });

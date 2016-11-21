@@ -1,11 +1,14 @@
 
 <template name='home'>
-<style>
+<script type="text/javascript">
+$('span.counter').counterUp();
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 
-</style>
-
-<!-- <img  id="bg" alt=""> -->
+<span class="counter">1,234,567.00</span>
+<span>$</span><span class="counter">1.99</span>
+<span class="counter">12345</span>
 
 
   <div class="section hero">
@@ -14,8 +17,6 @@
         <div class="one-half column">
           <h4 class="hero-heading">Propery Managers, </h4>
           <h4 class="hero-heading">Let's talk electricity.</h4>
-          <h4 class="hero-heading">First, we're going to cut your bill.</h4>
-          <h4 class="hero-heading"> Then, we're going to give your property an entirely new profit center. </h4>
           <div class='buttons'>
             <a class="button button-primary">How Does It Work? </a>
             <a class="button button-primary" href="/signup">Sign Up</a>
@@ -31,11 +32,13 @@
     </div>
   </div>
 
+
+
   <div class="section values">
     <div class="container">
       <div class="row">
         <div class="one-third column value">
-          <h2 class="value-multiplier"><span class="timer1"></span> %</h2>
+          <h2 class="value-multiplier"><span class="timer1" data-from="1" data-to="1000"></span> %</h2>
           <h5 class="value-heading"> Beat Rate </h5>
           <p class="value-description">Percentage of times we beat competiting electricity provider charges.</p>
 
