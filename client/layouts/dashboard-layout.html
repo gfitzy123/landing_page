@@ -1,0 +1,40 @@
+<head>
+  <title>Admin-Site</title>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/_all-skins.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/js/dashboard2.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.slimscroll.min.js"></script>
+  <script src="/js/jquery.sparkline.min.js"></script>
+
+</head>
+
+<template name='DashboardLayout'>
+  <!-- <div class="side-nav">
+      {{> AdminNavigation }}
+  </div>
+  <div class="main-content">
+      {{> Template.dynamic template=content }}
+  </div> -->
+  <!-- <body class="skin-blue sidebar-mini"> -->
+  <div class="skin-red sidebar-mini">
+    {{> Header }}
+    <aside class="main-sidebar">
+       {{> Menu }}
+    </aside>
+    <div class="content-wrapper" style="min-height: 906px;">
+        <!-- <section class="content-header">
+
+        </section> -->
+        <section class="content">
+            {{> Template.dynamic template=content }}
+        </section>
+    </div>
+  </div>
+</template>

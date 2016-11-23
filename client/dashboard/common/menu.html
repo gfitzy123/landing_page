@@ -1,0 +1,51 @@
+<template name='Menu'>
+      <section class="sidebar" style="height: auto;">
+        <style media="screen">
+          .tree {
+            margin: 0px !important;
+            list-style: none;
+            background-color: #8aa4af;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 40px;
+          }
+          .tree li {
+            display: list-item;
+            cursor: pointer;
+            text-align: -webkit-match-parent;
+            margin: 0;
+            padding: 5px;
+          }
+          .tree li:hover {
+            color: red !important;
+          }
+          .tree i {
+            margin-right: 10px;
+          }
+        </style>
+        <ul class="sidebar-menu">
+          <!-- <li class="header">NAVIGATION</li> -->
+            <li class="treeview">
+                <a href="/dashboard">
+                    <i class="fa fa-dashboard"></i><span>Dashboard</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" data-toggle="collapse" data-target="#demo">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>Email</span>
+                     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
+                </a>
+                <ul id="demo" class="collapse tree">
+                    <li><a href="/dashboard/email/inbox"><i class="fa fa-inbox" aria-hidden="true"></i><span> Inbox</span></a></li>
+                    <li><a href="/dashboard/email/draft"><i class="fa fa-edit" aria-hidden="true"></i>Draft</a></li>
+                    <li><a href="/dashboard/email/sent"><i class="fa fa-paper-plane"></i>Sent</a></li>
+                    <li><a href="/dashboard/email/trash"><i class="fa fa-trash"></i>Trush</a></li>
+                </ul>
+            </li>
+
+        </ul>
+      </section>
+</template>

@@ -1,6 +1,3 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-// import './main.html';
 /*!
 * jquery.counterup.js 1.0
 *
@@ -9,20 +6,6 @@ import { ReactiveVar } from 'meteor/reactive-var';
 *
 * Date: Nov 26, 2013
 */
-/*
-    countUp.js
-    by @inorganik
-*/
-
-// target = id of html element or var of previously selected html element where counting occurs
-// startVal = the value you want to begin at
-// endVal = the value you want to arrive at
-// decimals = number of decimal places, default 0
-// duration = duration of animation in seconds, default 2
-// options = optional object of options (see below)
-
-
-
 (function( $ ){
   "use strict";
 
@@ -98,6 +81,3 @@ import { ReactiveVar } from 'meteor/reactive-var';
   };
 
 })( jQuery );
-
-$('div.counter').counterUp();
-

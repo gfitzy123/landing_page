@@ -1,6 +1,9 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 
+import { Roles } from 'meteor/alanning:roles';
+
+
 import { SignUps } from '../../api/collections/signup';
 
 Meteor.methods({
@@ -15,5 +18,17 @@ Meteor.methods({
 
     return SignUps.insert(signups);
 
+  },
+  createAdminUser(user) {
+    check(user, {
+      email: String,
+      password: String
+    });
+
+    
+    var id = Accounts.createUser(user);
+    Roles.addUsersToRoles(id, ['admin']);
+
+    return id;
   }
 });

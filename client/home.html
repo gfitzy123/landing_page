@@ -8,13 +8,15 @@ $('span.counter').counterUp();
 <!--     <div class="container"> -->
       <div class="row">
         <div class="col-md-8 col-xs-8 col-lg-8">
-
           <h4 class="hero-heading text-center">Propery Managers, </h4>
           <h4 class="hero-heading  text-center">Let's talk electricity.</h4>
           <div class='buttons  text-center'>
             <a class="button button-primary text-center">How Does It Work? </a>
             <a class="button button-primary text-center" href="https://mystream.com/services/enroll/commercial">Sign Up</a>
           </div>
+          {{#if currentUser}}
+            <a class="button button-primary" href="/dashboard">Dashboard</a>
+          {{/if}}
 
     
         </div>
