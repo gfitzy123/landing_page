@@ -2,12 +2,28 @@
 <template name='home'>
 <script type="text/javascript">
 $('span.counter').counterUp();
+
+new WOW().init()
+
+
+// wow = new WOW({
+//   boxClass: 'wow',
+//   animateClass: 'animated',
+//   offset: 0,
+//   mobile: true,
+//   live: true
+// })
+
+// wow.init()
+
+
 </script>
 
   <div class="section hero">
 <!--     <div class="container"> -->
       <div class="row">
         <div class="col-md-8 col-xs-8 col-lg-8">
+
           <h4 class="hero-heading text-center">Propery Managers, </h4>
           <h4 class="hero-heading  text-center">Let's talk electricity.</h4>
           <div class='buttons  text-center'>
@@ -17,10 +33,7 @@ $('span.counter').counterUp();
           {{#if currentUser}}
             <a class="button button-primary" href="/dashboard">Dashboard</a>
           {{/if}}
-
-    
         </div>
-  
       <div class='col-md-4 col-xs-4 col-lg-4'>
         {{> signup}}
       </div>
@@ -62,6 +75,40 @@ $('span.counter').counterUp();
       <a class="button button-primary" href="">Download Case Study</a>
     </div>
   </div>
+
+    <section id="how-it-works" class="text-center">
+        <div class="container animated fadeIn infinite">
+            <div class="row col-md-12">
+                <h3 class="fadeIn animated"> how it works </h3>
+                <h4>bout to tell you</h4>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="icon-row">
+                <div class="col-md-4 animation-element animated fadeInUp" data-wow-delay="0.4s">
+                    <div class="iconbox">
+                        <i class="fa fa-plane fa-3x"></i>
+                    </div>
+                    <h2 class="icntitle">1. Step 1}</h2>
+                    <p class="icnp">do this </p>
+                </div>
+                <div class="col-md-4 animation-element animated fadeInUp 2" data-wow-delay="0.8s">
+                    <div class="iconbox">
+                        <i class="fa fa-bolt fa-3x"></i>
+                    </div>
+                    <h2 class="icntitle">2. step 2</h2>
+                    <p class="icnp">do that</p>
+                </div>
+                <div class="col-md-4  animation-element animated fadeInUp 3" data-wow-delay="1.2s">
+                    <div class="iconbox">
+                        <i class="fa fa-check fa-3x"></i>
+                    </div>
+                    <h2 class="icntitle">3. step 3 </h2>
+                    <p class="icnp">do this and that</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
   <div class="section categories">
     <div class="container">
