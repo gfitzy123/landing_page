@@ -1,24 +1,21 @@
 
+
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 5s;
+  animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
-div.col-md-4.animated.fadeInUp {
-  -vendor-animation-delay: 2.0s;
-  -vendor-animation-duration: 1s;
+i.glyphicon-phone-alt {
+    font-size: 2.2em;
 }
 
-div.col-md-4.animated.fadeInUp.2 {
-/*  -vendor-animation-delay: 0.8s;
-   -vendor-animation-duration: 1s;*/
-  	webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
-    animation-delay: 2s;
+div.col-md-4.animated.fadeInDown {
 }
 
-div.col-md-4.animated.fadeInUp.3 {
-  -vendor-animation-delay: 2.0s;
-   -vendor-animation-duration: 1s;
+div.col-md-4.animated.fadeInDown.2 {
+}
+
+div.col-md-4.animated.fadeInDown.3 {
 }
